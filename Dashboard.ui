@@ -16,7 +16,11 @@
    </font>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Dani Bank</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="resource.qrc">
+    <normaloff>:/images/Dani Bank_small.png</normaloff>:/images/Dani Bank_small.png</iconset>
   </property>
   <property name="styleSheet">
    <string notr="true">*{
@@ -75,12 +79,12 @@ QComboBox{
 }
 
 
-#aboutButton, #depositButton, #myAccountButton, #sendMoneyButton, #withdrawButton{
+#aboutButton, #depositButton, #myAccountButton, #sendMoneyButton, #withdrawButton, #paymentButton{
 	border-bottom-right-radius: 0px;
 	border-top-right-radius: 0px;
 }
 
-#aboutButton::pressed, #depositButton::pressed, #myAccountButton::pressed, #sendMoneyButton::pressed, #withdrawButton::pressed{
+#aboutButton::pressed, #depositButton::pressed, #myAccountButton::pressed, #sendMoneyButton::pressed, #withdrawButton::pressed, #paymentButton::pressed{
 	background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(85, 85, 127, 218), stop:1 rgba(255, 85, 127, 255));
 }
 
@@ -88,13 +92,13 @@ QComboBox{
 	border-radius: 10px;
 }
 
-#myAccountPage, #sendMoneyPage, #depositPage, #aboutPage, #withdrawPage{
+#myAccountPage, #sendMoneyPage, #depositPage, #aboutPage, #withdrawPage, #paymentPage{
 	background-color: rgb(76, 79, 121);
 	border-top-right-radius: 10px;
 	border-bottom-right-radius: 10px;
 }
 
-#myAccountFrame, #sendMoneyFrame, #depositFrame, #withdrawFrame, #welcomeFrame{
+#myAccountFrame, #sendMoneyFrame, #depositFrame, #withdrawFrame, #welcomeFrame, #paymentFrame, #selectPaymentType,#waterBillPayment,#schoolTuitionPayment,#mobileAirTimePayment{
 	background-color:qlineargradient(spread:repeat, x1:0.189428, y1:0.767, x2:1, y2:1, stop:0 rgba(254, 121, 199, 255), stop:1 rgba(56, 58, 89, 255));
 	border-radius: 10px;
 }
@@ -194,7 +198,7 @@ QSpinBox{
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="resource.qrc">:/images/Logo 500x500 px.png</pixmap>
+             <pixmap resource="resource.qrc">:/images/Dani Bank_small.png</pixmap>
             </property>
             <property name="scaledContents">
              <bool>true</bool>
@@ -407,10 +411,7 @@ QSpinBox{
          <property name="styleSheet">
           <string notr="true"/>
          </property>
-         <layout class="QHBoxLayout" name="horizontalLayout_6">
-          <property name="spacing">
-           <number>0</number>
-          </property>
+         <layout class="QVBoxLayout" name="verticalLayout_6">
           <property name="leftMargin">
            <number>0</number>
           </property>
@@ -604,7 +605,43 @@ QSpinBox{
                <property name="sizeHint" stdset="0">
                 <size>
                  <width>20</width>
-                 <height>90</height>
+                 <height>40</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QPushButton" name="paymentButton">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string>Payment</string>
+               </property>
+               <property name="icon">
+                <iconset resource="resource.qrc">
+                 <normaloff>:/icons/icons/dollar-sign.svg</normaloff>:/icons/icons/dollar-sign.svg</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>50</width>
+                 <height>50</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="verticalSpacer_9">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>40</height>
                 </size>
                </property>
               </spacer>
@@ -685,45 +722,32 @@ QSpinBox{
             <widget class="QWidget" name="myAccountPage">
              <layout class="QVBoxLayout" name="verticalLayout_4">
               <item>
-               <widget class="QLabel" name="logo">
-                <property name="maximumSize">
-                 <size>
-                  <width>150</width>
-                  <height>150</height>
-                 </size>
-                </property>
-                <property name="text">
-                 <string/>
-                </property>
-                <property name="pixmap">
-                 <pixmap resource="resource.qrc">:/images/Logo 500x500 px.png</pixmap>
-                </property>
-                <property name="scaledContents">
-                 <bool>true</bool>
-                </property>
-               </widget>
-              </item>
-              <item>
                <widget class="QWidget" name="widget_2" native="true">
                 <layout class="QHBoxLayout" name="horizontalLayout_8">
-                 <item alignment="Qt::AlignLeft">
-                  <widget class="QLabel" name="logoLabel_4">
-                   <property name="font">
-                    <font>
-                     <family>Segoe UI</family>
-                    </font>
-                   </property>
-                   <property name="styleSheet">
-                    <string notr="true">color: rgb(254, 121, 199);
-</string>
+                 <item>
+                  <widget class="QLabel" name="logo_7">
+                   <property name="maximumSize">
+                    <size>
+                     <width>150</width>
+                     <height>150</height>
+                    </size>
                    </property>
                    <property name="text">
-                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:24pt; font-weight:600;&quot;&gt;DANI&lt;/span&gt;&lt;span style=&quot; font-size:24pt;&quot;&gt;Bank&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    <string/>
+                   </property>
+                   <property name="pixmap">
+                    <pixmap resource="resource.qrc">:/images/Dani Bank_small_light.png</pixmap>
+                   </property>
+                   <property name="scaledContents">
+                    <bool>true</bool>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
                    </property>
                   </widget>
                  </item>
-                 <item alignment="Qt::AlignRight">
-                  <widget class="QLabel" name="logoLabel_5">
+                 <item>
+                  <widget class="QLabel" name="logoLabel_14">
                    <property name="font">
                     <font>
                      <family>Segoe UI</family>
@@ -734,11 +758,30 @@ QSpinBox{
 </string>
                    </property>
                    <property name="text">
-                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;My&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Account&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:48pt; font-weight:600;&quot;&gt;DANI&lt;/span&gt;&lt;span style=&quot; font-size:48pt;&quot;&gt;Bank&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                    </property>
                   </widget>
                  </item>
                 </layout>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="logoLabel_5">
+                <property name="font">
+                 <font>
+                  <family>Segoe UI</family>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(254, 121, 199);
+</string>
+                </property>
+                <property name="text">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;My&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Account&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
                </widget>
               </item>
               <item>
@@ -969,46 +1012,33 @@ QSpinBox{
             </widget>
             <widget class="QWidget" name="sendMoneyPage">
              <layout class="QVBoxLayout" name="verticalLayout_5">
-              <item alignment="Qt::AlignLeft">
-               <widget class="QLabel" name="logo_2">
-                <property name="maximumSize">
-                 <size>
-                  <width>150</width>
-                  <height>150</height>
-                 </size>
-                </property>
-                <property name="text">
-                 <string/>
-                </property>
-                <property name="pixmap">
-                 <pixmap resource="resource.qrc">:/images/Logo 500x500 px.png</pixmap>
-                </property>
-                <property name="scaledContents">
-                 <bool>true</bool>
-                </property>
-               </widget>
-              </item>
               <item>
                <widget class="QWidget" name="widget" native="true">
                 <layout class="QHBoxLayout" name="horizontalLayout_7">
-                 <item alignment="Qt::AlignLeft">
-                  <widget class="QLabel" name="logoLabel_2">
-                   <property name="font">
-                    <font>
-                     <family>Segoe UI</family>
-                    </font>
-                   </property>
-                   <property name="styleSheet">
-                    <string notr="true">color: rgb(254, 121, 199);
-</string>
+                 <item>
+                  <widget class="QLabel" name="logo_10">
+                   <property name="maximumSize">
+                    <size>
+                     <width>150</width>
+                     <height>150</height>
+                    </size>
                    </property>
                    <property name="text">
-                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:24pt; font-weight:600;&quot;&gt;DANI&lt;/span&gt;&lt;span style=&quot; font-size:24pt;&quot;&gt;Bank&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    <string/>
+                   </property>
+                   <property name="pixmap">
+                    <pixmap resource="resource.qrc">:/images/Dani Bank_small_light.png</pixmap>
+                   </property>
+                   <property name="scaledContents">
+                    <bool>true</bool>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
                    </property>
                   </widget>
                  </item>
-                 <item alignment="Qt::AlignRight">
-                  <widget class="QLabel" name="logoLabel_3">
+                 <item>
+                  <widget class="QLabel" name="logoLabel_18">
                    <property name="font">
                     <font>
                      <family>Segoe UI</family>
@@ -1019,11 +1049,30 @@ QSpinBox{
 </string>
                    </property>
                    <property name="text">
-                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Send&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Money&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:48pt; font-weight:600;&quot;&gt;DANI&lt;/span&gt;&lt;span style=&quot; font-size:48pt;&quot;&gt;Bank&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                    </property>
                   </widget>
                  </item>
                 </layout>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="logoLabel_3">
+                <property name="font">
+                 <font>
+                  <family>Segoe UI</family>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(254, 121, 199);
+</string>
+                </property>
+                <property name="text">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Send&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Money&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
                </widget>
               </item>
               <item>
@@ -1258,45 +1307,32 @@ QSpinBox{
             <widget class="QWidget" name="depositPage">
              <layout class="QVBoxLayout" name="verticalLayout_8">
               <item>
-               <widget class="QLabel" name="logo_5">
-                <property name="maximumSize">
-                 <size>
-                  <width>150</width>
-                  <height>150</height>
-                 </size>
-                </property>
-                <property name="text">
-                 <string/>
-                </property>
-                <property name="pixmap">
-                 <pixmap resource="resource.qrc">:/images/Logo 500x500 px.png</pixmap>
-                </property>
-                <property name="scaledContents">
-                 <bool>true</bool>
-                </property>
-               </widget>
-              </item>
-              <item>
                <widget class="QWidget" name="widget_5" native="true">
-                <layout class="QHBoxLayout" name="horizontalLayout_11">
-                 <item alignment="Qt::AlignLeft">
-                  <widget class="QLabel" name="logoLabel_10">
-                   <property name="font">
-                    <font>
-                     <family>Segoe UI</family>
-                    </font>
-                   </property>
-                   <property name="styleSheet">
-                    <string notr="true">color: rgb(254, 121, 199);
-</string>
+                <layout class="QHBoxLayout" name="horizontalLayout_9">
+                 <item>
+                  <widget class="QLabel" name="logo_8">
+                   <property name="maximumSize">
+                    <size>
+                     <width>150</width>
+                     <height>150</height>
+                    </size>
                    </property>
                    <property name="text">
-                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:24pt; font-weight:600;&quot;&gt;DANI&lt;/span&gt;&lt;span style=&quot; font-size:24pt;&quot;&gt;Bank&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    <string/>
+                   </property>
+                   <property name="pixmap">
+                    <pixmap resource="resource.qrc">:/images/Dani Bank_small_light.png</pixmap>
+                   </property>
+                   <property name="scaledContents">
+                    <bool>true</bool>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
                    </property>
                   </widget>
                  </item>
-                 <item alignment="Qt::AlignRight">
-                  <widget class="QLabel" name="logoLabel_11">
+                 <item>
+                  <widget class="QLabel" name="logoLabel_16">
                    <property name="font">
                     <font>
                      <family>Segoe UI</family>
@@ -1307,11 +1343,30 @@ QSpinBox{
 </string>
                    </property>
                    <property name="text">
-                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Deposit&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Amount&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:48pt; font-weight:600;&quot;&gt;DANI&lt;/span&gt;&lt;span style=&quot; font-size:48pt;&quot;&gt;Bank&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                    </property>
                   </widget>
                  </item>
                 </layout>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="logoLabel_11">
+                <property name="font">
+                 <font>
+                  <family>Segoe UI</family>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(254, 121, 199);
+</string>
+                </property>
+                <property name="text">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Deposit&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Amount&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
                </widget>
               </item>
               <item>
@@ -1515,28 +1570,31 @@ QSpinBox{
             <widget class="QWidget" name="withdrawPage">
              <layout class="QVBoxLayout" name="verticalLayout_9">
               <item>
-               <widget class="QLabel" name="logo_6">
-                <property name="maximumSize">
-                 <size>
-                  <width>150</width>
-                  <height>150</height>
-                 </size>
-                </property>
-                <property name="text">
-                 <string/>
-                </property>
-                <property name="pixmap">
-                 <pixmap resource="resource.qrc">:/images/Logo 500x500 px.png</pixmap>
-                </property>
-                <property name="scaledContents">
-                 <bool>true</bool>
-                </property>
-               </widget>
-              </item>
-              <item>
                <widget class="QWidget" name="widget_6" native="true">
                 <layout class="QHBoxLayout" name="horizontalLayout_12">
-                 <item alignment="Qt::AlignLeft">
+                 <item>
+                  <widget class="QLabel" name="logo_6">
+                   <property name="maximumSize">
+                    <size>
+                     <width>150</width>
+                     <height>150</height>
+                    </size>
+                   </property>
+                   <property name="text">
+                    <string/>
+                   </property>
+                   <property name="pixmap">
+                    <pixmap resource="resource.qrc">:/images/Dani Bank_small_light.png</pixmap>
+                   </property>
+                   <property name="scaledContents">
+                    <bool>true</bool>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
                   <widget class="QLabel" name="logoLabel_12">
                    <property name="font">
                     <font>
@@ -1548,27 +1606,30 @@ QSpinBox{
 </string>
                    </property>
                    <property name="text">
-                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:24pt; font-weight:600;&quot;&gt;DANI&lt;/span&gt;&lt;span style=&quot; font-size:24pt;&quot;&gt;Bank&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:48pt; font-weight:600;&quot;&gt;DANI&lt;/span&gt;&lt;span style=&quot; font-size:48pt;&quot;&gt;Bank&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                    </property>
-                  </widget>
-                 </item>
-                 <item alignment="Qt::AlignRight">
-                  <widget class="QLabel" name="logoLabel_13">
-                   <property name="font">
-                    <font>
-                     <family>Segoe UI</family>
-                    </font>
-                   </property>
-                   <property name="styleSheet">
-                    <string notr="true">color: rgb(254, 121, 199);
-</string>
-                   </property>
-                   <property name="text">
-                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Withdraw&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Amount&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   <property name="alignment">
+                    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                    </property>
                   </widget>
                  </item>
                 </layout>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="logoLabel_13">
+                <property name="font">
+                 <font>
+                  <family>Segoe UI</family>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(254, 121, 199);
+</string>
+                </property>
+                <property name="text">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Withdraw&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Amount&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
                </widget>
               </item>
               <item>
@@ -1798,22 +1859,6 @@ QSpinBox{
                  <property name="bottomMargin">
                   <number>0</number>
                  </property>
-                 <item row="0" column="0">
-                  <spacer name="horizontalSpacer_19">
-                   <property name="orientation">
-                    <enum>Qt::Horizontal</enum>
-                   </property>
-                   <property name="sizeType">
-                    <enum>QSizePolicy::Expanding</enum>
-                   </property>
-                   <property name="sizeHint" stdset="0">
-                    <size>
-                     <width>110</width>
-                     <height>20</height>
-                    </size>
-                   </property>
-                  </spacer>
-                 </item>
                  <item row="0" column="1">
                   <widget class="QLabel" name="accountNumberLabel_24">
                    <property name="sizePolicy">
@@ -1832,6 +1877,43 @@ QSpinBox{
                    </property>
                    <property name="text">
                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;Made By:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="0">
+                  <spacer name="horizontalSpacer_19">
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                   <property name="sizeType">
+                    <enum>QSizePolicy::Expanding</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>110</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item row="0" column="2" alignment="Qt::AlignVCenter">
+                  <widget class="QLabel" name="accountNumberLabel_25">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <family>Source Code Pro ExtraLight</family>
+                    </font>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">color: rgb(255, 255, 255);</string>
+                   </property>
+                   <property name="text">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;Hiruy Habtamu&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                    </property>
                   </widget>
                  </item>
@@ -1866,27 +1948,6 @@ QSpinBox{
                    </property>
                   </widget>
                  </item>
-                 <item row="0" column="2" alignment="Qt::AlignVCenter">
-                  <widget class="QLabel" name="accountNumberLabel_25">
-                   <property name="sizePolicy">
-                    <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-                     <horstretch>0</horstretch>
-                     <verstretch>0</verstretch>
-                    </sizepolicy>
-                   </property>
-                   <property name="font">
-                    <font>
-                     <family>Source Code Pro ExtraLight</family>
-                    </font>
-                   </property>
-                   <property name="styleSheet">
-                    <string notr="true">color: rgb(255, 255, 255);</string>
-                   </property>
-                   <property name="text">
-                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;Hiruy Habtamu&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                   </property>
-                  </widget>
-                 </item>
                  <item row="2" column="3">
                   <spacer name="horizontalSpacer_21">
                    <property name="orientation">
@@ -1903,14 +1964,978 @@ QSpinBox{
                    </property>
                   </spacer>
                  </item>
-                 <item row="5" column="2" alignment="Qt::AlignRight">
+                 <item row="5" column="2">
                   <widget class="QLabel" name="label_2">
                    <property name="styleSheet">
                     <string notr="true">color: white;</string>
                    </property>
                    <property name="text">
-                    <string>©2023</string>
+                    <string>©2023 Hiruy Habtamu</string>
                    </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QWidget" name="paymentPage">
+             <layout class="QVBoxLayout" name="verticalLayout_7">
+              <item>
+               <widget class="QWidget" name="widget_7" native="true">
+                <layout class="QHBoxLayout" name="horizontalLayout_10">
+                 <item>
+                  <widget class="QLabel" name="logo_9">
+                   <property name="maximumSize">
+                    <size>
+                     <width>150</width>
+                     <height>150</height>
+                    </size>
+                   </property>
+                   <property name="text">
+                    <string/>
+                   </property>
+                   <property name="pixmap">
+                    <pixmap resource="resource.qrc">:/images/Dani Bank_small_light.png</pixmap>
+                   </property>
+                   <property name="scaledContents">
+                    <bool>true</bool>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="logoLabel_17">
+                   <property name="font">
+                    <font>
+                     <family>Segoe UI</family>
+                    </font>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">color: rgb(254, 121, 199);
+</string>
+                   </property>
+                   <property name="text">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:48pt; font-weight:600;&quot;&gt;DANI&lt;/span&gt;&lt;span style=&quot; font-size:48pt;&quot;&gt;Bank&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="logoLabel_15">
+                <property name="font">
+                 <font>
+                  <family>Segoe UI</family>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(254, 121, 199);
+</string>
+                </property>
+                <property name="text">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Make&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Payment&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QFrame" name="paymentFrame">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                  <horstretch>0</horstretch>
+                  <verstretch>50</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="frameShape">
+                 <enum>QFrame::StyledPanel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Raised</enum>
+                </property>
+                <layout class="QHBoxLayout" name="horizontalLayout_6">
+                 <property name="spacing">
+                  <number>0</number>
+                 </property>
+                 <property name="leftMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>0</number>
+                 </property>
+                 <item>
+                  <widget class="QStackedWidget" name="paymentFrameStackedWidget">
+                   <property name="currentIndex">
+                    <number>0</number>
+                   </property>
+                   <widget class="QWidget" name="selectPaymentType">
+                    <layout class="QGridLayout" name="gridLayout_3">
+                     <item row="0" column="3">
+                      <spacer name="verticalSpacer_18">
+                       <property name="orientation">
+                        <enum>Qt::Vertical</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>20</width>
+                         <height>71</height>
+                        </size>
+                       </property>
+                      </spacer>
+                     </item>
+                     <item row="1" column="0">
+                      <spacer name="horizontalSpacer_20">
+                       <property name="orientation">
+                        <enum>Qt::Horizontal</enum>
+                       </property>
+                       <property name="sizeType">
+                        <enum>QSizePolicy::Expanding</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>126</width>
+                         <height>20</height>
+                        </size>
+                       </property>
+                      </spacer>
+                     </item>
+                     <item row="1" column="5">
+                      <spacer name="horizontalSpacer_23">
+                       <property name="orientation">
+                        <enum>Qt::Horizontal</enum>
+                       </property>
+                       <property name="sizeType">
+                        <enum>QSizePolicy::Expanding</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>126</width>
+                         <height>20</height>
+                        </size>
+                       </property>
+                      </spacer>
+                     </item>
+                     <item row="3" column="4">
+                      <widget class="QPushButton" name="depositDepositButton_2">
+                       <property name="text">
+                        <string>Proceed</string>
+                       </property>
+                       <property name="icon">
+                        <iconset resource="resource.qrc">
+                         <normaloff>:/icons/icons/chevrons-right.svg</normaloff>:/icons/icons/chevrons-right.svg</iconset>
+                       </property>
+                       <property name="iconSize">
+                        <size>
+                         <width>40</width>
+                         <height>40</height>
+                        </size>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="4" column="3">
+                      <spacer name="verticalSpacer_17">
+                       <property name="orientation">
+                        <enum>Qt::Vertical</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>20</width>
+                         <height>71</height>
+                        </size>
+                       </property>
+                      </spacer>
+                     </item>
+                     <item row="3" column="1">
+                      <widget class="QLabel" name="errorDepositLabel_2">
+                       <property name="styleSheet">
+                        <string notr="true">color: white;</string>
+                       </property>
+                       <property name="text">
+                        <string/>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="1" column="3">
+                      <spacer name="horizontalSpacer_22">
+                       <property name="orientation">
+                        <enum>Qt::Horizontal</enum>
+                       </property>
+                       <property name="sizeType">
+                        <enum>QSizePolicy::Preferred</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>20</width>
+                         <height>20</height>
+                        </size>
+                       </property>
+                      </spacer>
+                     </item>
+                     <item row="1" column="4">
+                      <widget class="QComboBox" name="comboBox">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
+                       <item>
+                        <property name="text">
+                         <string>Water Bill</string>
+                        </property>
+                       </item>
+                       <item>
+                        <property name="text">
+                         <string>School Tuition</string>
+                        </property>
+                       </item>
+                       <item>
+                        <property name="text">
+                         <string>Electricity Bill</string>
+                        </property>
+                       </item>
+                       <item>
+                        <property name="text">
+                         <string>Mobile Air Time</string>
+                        </property>
+                       </item>
+                       <item>
+                        <property name="text">
+                         <string>Mobile Packages</string>
+                        </property>
+                       </item>
+                      </widget>
+                     </item>
+                     <item row="1" column="2">
+                      <widget class="QLabel" name="paymentTypeLabel">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
+                       <property name="font">
+                        <font>
+                         <family>Source Code Pro ExtraLight</family>
+                        </font>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true">color: rgb(255, 255, 255);</string>
+                       </property>
+                       <property name="text">
+                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;Payment Type:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                   <widget class="QWidget" name="waterBillPayment">
+                    <layout class="QGridLayout" name="gridLayout_4">
+                     <item row="1" column="5">
+                      <spacer name="verticalSpacer_10">
+                       <property name="orientation">
+                        <enum>Qt::Vertical</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>20</width>
+                         <height>27</height>
+                        </size>
+                       </property>
+                      </spacer>
+                     </item>
+                     <item row="4" column="9">
+                      <spacer name="horizontalSpacer_9">
+                       <property name="orientation">
+                        <enum>Qt::Horizontal</enum>
+                       </property>
+                       <property name="sizeType">
+                        <enum>QSizePolicy::Expanding</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>33</width>
+                         <height>20</height>
+                        </size>
+                       </property>
+                      </spacer>
+                     </item>
+                     <item row="6" column="1" colspan="2">
+                      <widget class="QLabel" name="errorWaterBillPaymentLabel">
+                       <property name="styleSheet">
+                        <string notr="true">color: white;</string>
+                       </property>
+                       <property name="text">
+                        <string/>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="3" column="0">
+                      <spacer name="horizontalSpacer_8">
+                       <property name="orientation">
+                        <enum>Qt::Horizontal</enum>
+                       </property>
+                       <property name="sizeType">
+                        <enum>QSizePolicy::Expanding</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>41</width>
+                         <height>20</height>
+                        </size>
+                       </property>
+                      </spacer>
+                     </item>
+                     <item row="7" column="5">
+                      <spacer name="verticalSpacer_11">
+                       <property name="orientation">
+                        <enum>Qt::Vertical</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>20</width>
+                         <height>28</height>
+                        </size>
+                       </property>
+                      </spacer>
+                     </item>
+                     <item row="1" column="4">
+                      <widget class="QLabel" name="accountNumberLabel_26">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
+                       <property name="font">
+                        <font>
+                         <family>Source Code Pro ExtraLight</family>
+                        </font>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true">color: rgb(255, 255, 255);</string>
+                       </property>
+                       <property name="text">
+                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;WATER BILL&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="3" column="4">
+                      <spacer name="horizontalSpacer_7">
+                       <property name="orientation">
+                        <enum>Qt::Horizontal</enum>
+                       </property>
+                       <property name="sizeType">
+                        <enum>QSizePolicy::Preferred</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>100</width>
+                         <height>20</height>
+                        </size>
+                       </property>
+                      </spacer>
+                     </item>
+                     <item row="3" column="7" colspan="2">
+                      <widget class="QSpinBox" name="waterBillAmountLineEdit">
+                       <property name="suffix">
+                        <string> Birr</string>
+                       </property>
+                       <property name="minimum">
+                        <number>1</number>
+                       </property>
+                       <property name="maximum">
+                        <number>1000000000</number>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="2" column="7" colspan="2">
+                      <widget class="QLineEdit" name="waterBillPaymentCodeLineEdit">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="5" column="7" colspan="2">
+                      <widget class="QLineEdit" name="waterBillConfirmPasswordLineEdit">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="6" column="7" colspan="2">
+                      <widget class="QPushButton" name="waterBillPayButton">
+                       <property name="text">
+                        <string>Pay</string>
+                       </property>
+                       <property name="icon">
+                        <iconset resource="resource.qrc">
+                         <normaloff>:/icons/icons/dollar-sign.svg</normaloff>:/icons/icons/dollar-sign.svg</iconset>
+                       </property>
+                       <property name="iconSize">
+                        <size>
+                         <width>40</width>
+                         <height>40</height>
+                        </size>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="5" column="1" colspan="3">
+                      <widget class="QLabel" name="accountNumberLabel_18">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
+                       <property name="font">
+                        <font>
+                         <family>Source Code Pro ExtraLight</family>
+                        </font>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true">color: rgb(255, 255, 255);</string>
+                       </property>
+                       <property name="text">
+                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;Confirm Password:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="2" column="3">
+                      <widget class="QLabel" name="accountNumberLabel_17">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
+                       <property name="font">
+                        <font>
+                         <family>Source Code Pro ExtraLight</family>
+                        </font>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true">color: rgb(255, 255, 255);</string>
+                       </property>
+                       <property name="text">
+                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;Payment Code:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="3" column="3">
+                      <widget class="QLabel" name="accountNumberLabel_14">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
+                       <property name="font">
+                        <font>
+                         <family>Source Code Pro ExtraLight</family>
+                        </font>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true">color: rgb(255, 255, 255);</string>
+                       </property>
+                       <property name="text">
+                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;Amount:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                   <widget class="QWidget" name="schoolTuitionPayment">
+                    <layout class="QGridLayout" name="gridLayout_8">
+                     <item row="0" column="3" colspan="2">
+                      <widget class="QLabel" name="accountNumberLabel_27">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
+                       <property name="font">
+                        <font>
+                         <family>Source Code Pro ExtraLight</family>
+                        </font>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true">color: rgb(255, 255, 255);</string>
+                       </property>
+                       <property name="text">
+                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;SCHOOL TUITION&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="0" column="5">
+                      <spacer name="verticalSpacer_12">
+                       <property name="orientation">
+                        <enum>Qt::Vertical</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>20</width>
+                         <height>25</height>
+                        </size>
+                       </property>
+                      </spacer>
+                     </item>
+                     <item row="1" column="1" colspan="3">
+                      <widget class="QLabel" name="accountNumberLabel_30">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
+                       <property name="font">
+                        <font>
+                         <family>Source Code Pro ExtraLight</family>
+                        </font>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true">color: rgb(255, 255, 255);</string>
+                       </property>
+                       <property name="text">
+                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;School Account Number:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="1" column="6">
+                      <widget class="QLineEdit" name="schoolTuitionAccountNumberLineEdit">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="2" column="0" rowspan="2">
+                      <spacer name="horizontalSpacer_12">
+                       <property name="orientation">
+                        <enum>Qt::Horizontal</enum>
+                       </property>
+                       <property name="sizeType">
+                        <enum>QSizePolicy::Expanding</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>23</width>
+                         <height>20</height>
+                        </size>
+                       </property>
+                      </spacer>
+                     </item>
+                     <item row="2" column="4" rowspan="2" colspan="3">
+                      <spacer name="horizontalSpacer_11">
+                       <property name="orientation">
+                        <enum>Qt::Horizontal</enum>
+                       </property>
+                       <property name="sizeType">
+                        <enum>QSizePolicy::Preferred</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>244</width>
+                         <height>20</height>
+                        </size>
+                       </property>
+                      </spacer>
+                     </item>
+                     <item row="3" column="6">
+                      <widget class="QSpinBox" name="schoolTuitionAmountLineEdit">
+                       <property name="suffix">
+                        <string> Birr</string>
+                       </property>
+                       <property name="minimum">
+                        <number>1</number>
+                       </property>
+                       <property name="maximum">
+                        <number>1000000000</number>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="4" column="6">
+                      <widget class="QComboBox" name="schoolTuitionMonthComboBox"/>
+                     </item>
+                     <item row="4" column="7">
+                      <spacer name="horizontalSpacer_10">
+                       <property name="orientation">
+                        <enum>Qt::Horizontal</enum>
+                       </property>
+                       <property name="sizeType">
+                        <enum>QSizePolicy::Expanding</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>23</width>
+                         <height>20</height>
+                        </size>
+                       </property>
+                      </spacer>
+                     </item>
+                     <item row="5" column="1" colspan="3">
+                      <widget class="QLabel" name="accountNumberLabel_28">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
+                       <property name="font">
+                        <font>
+                         <family>Source Code Pro ExtraLight</family>
+                        </font>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true">color: rgb(255, 255, 255);</string>
+                       </property>
+                       <property name="text">
+                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;Confirm Password:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="5" column="6">
+                      <widget class="QLineEdit" name="schoolTuitionConfirmPassword">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="6" column="1">
+                      <widget class="QLabel" name="errorWaterBillPaymentLabel_2">
+                       <property name="styleSheet">
+                        <string notr="true">color: white;</string>
+                       </property>
+                       <property name="text">
+                        <string/>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="6" column="6">
+                      <widget class="QPushButton" name="schoolTuitionPayButton">
+                       <property name="text">
+                        <string>Pay</string>
+                       </property>
+                       <property name="icon">
+                        <iconset resource="resource.qrc">
+                         <normaloff>:/icons/icons/dollar-sign.svg</normaloff>:/icons/icons/dollar-sign.svg</iconset>
+                       </property>
+                       <property name="iconSize">
+                        <size>
+                         <width>40</width>
+                         <height>40</height>
+                        </size>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="7" column="5">
+                      <spacer name="verticalSpacer_19">
+                       <property name="orientation">
+                        <enum>Qt::Vertical</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>20</width>
+                         <height>40</height>
+                        </size>
+                       </property>
+                      </spacer>
+                     </item>
+                     <item row="4" column="1" colspan="3">
+                      <widget class="QLabel" name="accountNumberLabel_35">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
+                       <property name="font">
+                        <font>
+                         <family>Source Code Pro ExtraLight</family>
+                        </font>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true">color: rgb(255, 255, 255);</string>
+                       </property>
+                       <property name="text">
+                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;Payment Month:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="2" column="1" rowspan="2" colspan="3">
+                      <widget class="QLabel" name="accountNumberLabel_29">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
+                       <property name="font">
+                        <font>
+                         <family>Source Code Pro ExtraLight</family>
+                        </font>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true">color: rgb(255, 255, 255);</string>
+                       </property>
+                       <property name="text">
+                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;Amount:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                   <widget class="QWidget" name="mobileAirTimePayment">
+                    <layout class="QGridLayout" name="gridLayout_9">
+                     <item row="0" column="2" colspan="2">
+                      <widget class="QLabel" name="accountNumberLabel_31">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
+                       <property name="font">
+                        <font>
+                         <family>Source Code Pro ExtraLight</family>
+                        </font>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true">color: rgb(255, 255, 255);</string>
+                       </property>
+                       <property name="text">
+                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;MOBILE AIRTIME&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="0" column="4">
+                      <spacer name="verticalSpacer_20">
+                       <property name="orientation">
+                        <enum>Qt::Vertical</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>20</width>
+                         <height>26</height>
+                        </size>
+                       </property>
+                      </spacer>
+                     </item>
+                     <item row="1" column="1" colspan="2">
+                      <widget class="QLabel" name="accountNumberLabel_34">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
+                       <property name="font">
+                        <font>
+                         <family>Source Code Pro ExtraLight</family>
+                        </font>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true">color: rgb(255, 255, 255);</string>
+                       </property>
+                       <property name="text">
+                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;Phone Number:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="1" column="6">
+                      <widget class="QLineEdit" name="mobileAirTimePhoneNumberLineEdit">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
+                       <property name="inputMask">
+                        <string/>
+                       </property>
+                       <property name="placeholderText">
+                        <string>+251912345678</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="2" column="0" rowspan="2">
+                      <spacer name="horizontalSpacer_26">
+                       <property name="orientation">
+                        <enum>Qt::Horizontal</enum>
+                       </property>
+                       <property name="sizeType">
+                        <enum>QSizePolicy::Expanding</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>48</width>
+                         <height>20</height>
+                        </size>
+                       </property>
+                      </spacer>
+                     </item>
+                     <item row="2" column="1" rowspan="2" colspan="2">
+                      <widget class="QLabel" name="accountNumberLabel_33">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
+                       <property name="font">
+                        <font>
+                         <family>Source Code Pro ExtraLight</family>
+                        </font>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true">color: rgb(255, 255, 255);</string>
+                       </property>
+                       <property name="text">
+                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;AirTime Amount:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="2" column="3" rowspan="2" colspan="4">
+                      <spacer name="horizontalSpacer_25">
+                       <property name="orientation">
+                        <enum>Qt::Horizontal</enum>
+                       </property>
+                       <property name="sizeType">
+                        <enum>QSizePolicy::Preferred</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>265</width>
+                         <height>20</height>
+                        </size>
+                       </property>
+                      </spacer>
+                     </item>
+                     <item row="3" column="6">
+                      <widget class="QSpinBox" name="mobileAirTimeAmountLineEdit">
+                       <property name="suffix">
+                        <string> Birr</string>
+                       </property>
+                       <property name="minimum">
+                        <number>1</number>
+                       </property>
+                       <property name="maximum">
+                        <number>1000000000</number>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="4" column="7">
+                      <spacer name="horizontalSpacer_24">
+                       <property name="orientation">
+                        <enum>Qt::Horizontal</enum>
+                       </property>
+                       <property name="sizeType">
+                        <enum>QSizePolicy::Expanding</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>42</width>
+                         <height>20</height>
+                        </size>
+                       </property>
+                      </spacer>
+                     </item>
+                     <item row="5" column="1" colspan="2">
+                      <widget class="QLabel" name="accountNumberLabel_32">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
+                       <property name="font">
+                        <font>
+                         <family>Source Code Pro ExtraLight</family>
+                        </font>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true">color: rgb(255, 255, 255);</string>
+                       </property>
+                       <property name="text">
+                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;Confirm Password:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="5" column="6">
+                      <widget class="QLineEdit" name="mobileAirTimeConfirmPassword">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="6" column="6">
+                      <widget class="QPushButton" name="mobileAirTimePayButton">
+                       <property name="text">
+                        <string>Pay</string>
+                       </property>
+                       <property name="icon">
+                        <iconset resource="resource.qrc">
+                         <normaloff>:/icons/icons/dollar-sign.svg</normaloff>:/icons/icons/dollar-sign.svg</iconset>
+                       </property>
+                       <property name="iconSize">
+                        <size>
+                         <width>40</width>
+                         <height>40</height>
+                        </size>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="7" column="4">
+                      <spacer name="verticalSpacer_21">
+                       <property name="orientation">
+                        <enum>Qt::Vertical</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>20</width>
+                         <height>36</height>
+                        </size>
+                       </property>
+                      </spacer>
+                     </item>
+                     <item row="6" column="1" colspan="3">
+                      <widget class="QLabel" name="errorMobileAirTimeLabel">
+                       <property name="styleSheet">
+                        <string notr="true">color: white;</string>
+                       </property>
+                       <property name="text">
+                        <string/>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
                   </widget>
                  </item>
                 </layout>
@@ -1950,7 +2975,6 @@ QSpinBox{
   <tabstop>closeApp</tabstop>
  </tabstops>
  <resources>
-  <include location="resource.qrc"/>
   <include location="resource.qrc"/>
  </resources>
  <connections/>

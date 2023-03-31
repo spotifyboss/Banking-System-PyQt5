@@ -290,6 +290,9 @@
     <file>icons/zoom-out.svg</file>
   </qresource>
   <qresource prefix="images">
+    <file>Dani Bank_small_light.png</file>
+    <file>Dani Bank.png</file>
+    <file>Dani Bank_small.png</file>
     <file>Logo 500x500 px.png</file>
   </qresource>
 </RCC>

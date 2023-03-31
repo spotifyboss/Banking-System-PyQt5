@@ -43,7 +43,7 @@ class Ui_LoginWindow(object):
 "\n"
 "#window{\n"
 "    \n"
-"    background-color: rgb(56, 50, 80);\n"
+"    background-color: rgb(76, 79, 121);\n"
 "    border-radius: 10px;\n"
 "}\n"
 "\n"
@@ -121,7 +121,7 @@ class Ui_LoginWindow(object):
         self.label = QtWidgets.QLabel(self.frame)
         self.label.setMaximumSize(QtCore.QSize(30, 30))
         self.label.setText("")
-        self.label.setPixmap(QtGui.QPixmap(":/images/Logo 500x500 px.png"))
+        self.label.setPixmap(QtGui.QPixmap(":/images/Dani Bank_small.png"))
         self.label.setScaledContents(True)
         self.label.setObjectName("label")
         self.horizontalLayout_3.addWidget(self.label)
@@ -210,16 +210,16 @@ class Ui_LoginWindow(object):
         self.logoFrame.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.logoFrame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.logoFrame.setObjectName("logoFrame")
-        self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.logoFrame)
-        self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout_2.setObjectName("verticalLayout_2")
+        self.horizontalLayout_7 = QtWidgets.QHBoxLayout(self.logoFrame)
+        self.horizontalLayout_7.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_7.setObjectName("horizontalLayout_7")
         self.logo = QtWidgets.QLabel(self.logoFrame)
         self.logo.setMaximumSize(QtCore.QSize(150, 150))
         self.logo.setText("")
-        self.logo.setPixmap(QtGui.QPixmap(":/images/Logo 500x500 px.png"))
+        self.logo.setPixmap(QtGui.QPixmap(":/images/Dani Bank_small_light.png"))
         self.logo.setScaledContents(True)
         self.logo.setObjectName("logo")
-        self.verticalLayout_2.addWidget(self.logo, 0, QtCore.Qt.AlignHCenter|QtCore.Qt.AlignVCenter)
+        self.horizontalLayout_7.addWidget(self.logo)
         self.logoLabel = QtWidgets.QLabel(self.logoFrame)
         font = QtGui.QFont()
         font.setFamily("Segoe UI")
@@ -227,7 +227,7 @@ class Ui_LoginWindow(object):
         self.logoLabel.setStyleSheet("color: rgb(254, 121, 199);\n"
 "")
         self.logoLabel.setObjectName("logoLabel")
-        self.verticalLayout_2.addWidget(self.logoLabel, 0, QtCore.Qt.AlignHCenter|QtCore.Qt.AlignVCenter)
+        self.horizontalLayout_7.addWidget(self.logoLabel)
         self.verticalLayout_3.addWidget(self.logoFrame, 0, QtCore.Qt.AlignHCenter|QtCore.Qt.AlignVCenter)
         self.stackedWidget = QtWidgets.QStackedWidget(self.window)
         self.stackedWidget.setObjectName("stackedWidget")
@@ -565,7 +565,7 @@ class Ui_LoginWindow(object):
         self.minimizeApp.setToolTip(_translate("LoginWindow", "minimize"))
         self.maximiseApp.setToolTip(_translate("LoginWindow", "maximize"))
         self.closeApp.setToolTip(_translate("LoginWindow", "exit"))
-        self.logoLabel.setText(_translate("LoginWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:24pt; font-weight:600;\">DANI</span><span style=\" font-size:24pt;\">Bank</span></p></body></html>"))
+        self.logoLabel.setText(_translate("LoginWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:48pt; font-weight:600;\">DANI</span><span style=\" font-size:48pt;\">Bank</span></p></body></html>"))
         self.passwordSigninLabel.setText(_translate("LoginWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; font-weight:600;\">Password</span></p></body></html>"))
         self.accountNumberLabel.setText(_translate("LoginWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; font-weight:600;\">Account Number</span></p></body></html>"))
         self.createAccountButton.setText(_translate("LoginWindow", "Create Account"))
