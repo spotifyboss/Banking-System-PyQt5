@@ -1,18 +1,18 @@
+import sys
+import os
 from cx_Freeze import setup, Executable
 
-# Dependencies are automatically detected, but it might need
-# fine tuning.
-build_options = {'packages': [], 'excludes': []}
+files = ['Dani-Bank_small.ico']
 
-import sys
-base = 'Win32GUI' if sys.platform=='win32' else None
+target = Executable(
+    script = "main.py",
+    base = "Win32GUI",
+    icon = "Dani-Bank_small.ico")
 
-executables = [
-    Executable('main.py', base=base, target_name = 'Dani Bank')
-]
-
-setup(name='Bank',
-      version = '1.0',
-      description = 'Your first Choice',
-      options = {'build_exe': build_options},
-      executables = executables)
+setup(
+    name = "Dani Bank",
+    version = "2.0",
+    description = "Modern GUI Banking System",
+    author = "Hiruy Habtamu",
+    options = {'build_exe': {'include_files':files}},
+    executables = [target])
